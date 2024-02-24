@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src= " https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <script src= " https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJ lSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src= " https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <link href="./style.css" rel="stylesheet" />
+  <script src="./js/addButtons.js"></script> <script src="./js//markerhandler.js"></script> <script src="./js/addMarkers.js"></script> <script src="./js/ star.js"></script>
+
+  <script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyCmiHRPvQ6mX_3Ekvz9fI1sU1bxQJpv83A",
+  authDomain: "tienda-de-juguetes-aa1a0.firebaseapp.com",
+  projectId: "tienda-de-juguetes-aa1a0",
+  storageBucket: "tienda-de-juguetes-aa1a0.appspot.com",
+  messagingSenderId: "451313735218",
+  appId: "1:451313735218:web:a79f8443de2abaa3bf4e2b"
+};
+    
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  
+</head>
+<body>
+    <a-scene>
+        <a-entity camera></a-entity>
+        <a-assets>
+            <a-asset-item id="tren" src="assets\MODEL\scene (1).gltf"></a-asset-item>
+        </a-assets>
+
+        <a-marker id="crane-marker" type="pattern" url="assets/Tren.patt" cursor="rayOrigin:mouse">
+
+          <a-entity gltf-model="#tren" position="-1 0 0" scale="0.05 0.05 0.05"></a-entity>
+
+          <a-plane position="0 0 0" width="1.5" height="1.5" rotation="-90 0 0">
+            <a-entity text="value:tren\n\armable\n\música-negra;color:black;align:center;width:2;fo nt:monoid" position="0 0 0.1" rotation="0 0 0"></a-entity>
+          </a-plane>
+
+        </a-marker>
+    </a-scene>
+    <div id="button-div"></div>
+</body>
+</html>
